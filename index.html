@@ -188,20 +188,18 @@
     }
 
     .profile-photo {
-      display: block;
+    width: 100%;
+    max-width: 315px;
 
-      width: 100%;
-      max-width: 390px;
-      aspect-ratio: 4 / 5;
+    aspect-ratio: 3 / 4;
 
-      margin-left: auto;
+    object-fit: cover;
+    object-position: center 12%;
 
-      object-fit: cover;
-      object-position: center 10%;
+    border-radius: 12px;
 
-      border-radius: 12px;
-      box-shadow: 0 22px 50px rgba(11, 37, 69, 0.16);
-    }
+    box-shadow: 0 18px 40px rgba(0,0,0,.12);
+}
 
     section {
       padding: 90px 7%;
