@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Dr. Juha Yoon is an Assistant Professor of Sport Management at San José State University. Her research examines artificial intelligence, analytics, innovation, and emerging technologies in sport."
+  >
+
+  <title>Juha Yoon | Sport Management</title>
+
+  <style>
+    :root {
+      --sjsu-blue: #0055a2;
+      --sjsu-dark-blue: #003b70;
+      --sjsu-gold: #e5a823;
+      --navy: #0b2545;
+      --text: #172033;
+      --muted: #5b6472;
+      --light-gray: #f4f6f8;
+      --border: #e1e6eb;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.65;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    a {
+      color: var(--sjsu-blue);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 18px 7%;
+
+      background: rgba(255, 255, 255, 0.97);
+      border-bottom: 1px solid var(--border);
+
+      backdrop-filter: blur(8px);
+    }
+
+    .site-name {
+      color: var(--navy);
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    nav a:hover {
+      color: var(--sjsu-blue);
+    }
+
+    .hero {
+      padding: 100px 7%;
+      background:
+        linear-gradient(
+          135deg,
+          var(--navy),
+          var(--sjsu-blue)
+        );
+      color: var(--white);
+    }
+
+    .hero-grid {
+      max-width: 1220px;
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+      align-items: center;
+      gap: 70px;
+    }
+
+    .hero-eyebrow {
+      margin: 0 0 16px;
+
+      color: var(--sjsu-gold);
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 0 0 20px;
+
+      font-size: clamp(50px, 8vw, 92px);
+      line-height: 0.98;
+      letter-spacing: -3px;
+    }
+
+    .hero-title {
+      margin: 0 0 28px;
+
+      font-size: clamp(20px, 2.5vw, 28px);
+      line-height: 1.4;
+      opacity: 0.94;
+    }
+
+    .hero-bio {
+      max-width: 760px;
+      margin: 0 0 34px;
+
+      font-size: 19px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-links a {
+      display: inline-block;
+
+      padding: 11px 18px;
+
+      color: var(--navy);
+      background: var(--sjsu-gold);
+
+      border-radius: 6px;
+
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .hero-links a.secondary {
+      color: var(--white);
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.55);
+    }
+
+    .hero-links a:hover {
+      transform: translateY(-2px);
+    }
+
+    .profile-photo {
+      display: block;
+
+      width: 100%;
+      max-width: 380px;
+      aspect-ratio: 4 / 5;
+
+      margin-left: auto;
+
+      object-fit: cover;
+      object-position: center top;
+
+      border: 8px solid rgba(255, 255, 255, 0.16);
+      border-radius: 16px;
+
+      box-shadow: 0 22px 45px rgba(0, 0, 0, 0.22);
+    }
+
+    section {
+      padding: 90px 7%;
+    }
+
+    .section-inner {
+      max-width: 1220px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      margin: 0 0 8px;
+
+      color: var(--sjsu-blue);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    section h2 {
+      margin: 0 0 28px;
+
+      color: var(--navy);
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.12;
+    }
+
+    section h2::after {
+      content: "";
+
+      display: block;
+      width: 58px;
+      height: 5px;
+
+      margin-top: 16px;
+
+      background: var(--sjsu-gold);
+      border-radius: 999px;
+    }
+
+    .section-intro {
+      max-width: 850px;
+      margin: 0;
+
+      color: var(--muted);
+      font-size: 20px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+      gap: 60px;
+      align-items: start;
+    }
+
+    .about-text p {
+      margin-top: 0;
+      font-size: 18px;
+    }
+
+    .affiliation-card {
+      padding: 28px;
+
+      background: var(--light-gray);
+      border-left: 5px solid var(--sjsu-gold);
+      border-radius: 8px;
+    }
+
+    .affiliation-card h3 {
+      margin: 0 0 12px;
+      color: var(--navy);
+      font-size: 21px;
+    }
+
+    .affiliation-card p {
+      margin: 5px 0;
+      color: var(--muted);
+    }
+
+    .research-section {
+      background: var(--light-gray);
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 45px;
+    }
+
+    .research-card {
+      min-height: 215px;
+      padding: 28px;
+
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 5px solid var(--sjsu-gold);
+      border-radius: 10px;
+
+      box-shadow: 0 8px 22px rgba(11, 37, 69, 0.05);
+    }
+
+    .research-card h3 {
+      margin: 0 0 12px;
+
+      color: var(--sjsu-blue);
+      font-size: 22px;
+      line-height: 1.3;
+    }
+
+    .research-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .work-list {
+      display: grid;
+      gap: 18px;
+      margin-top: 40px;
+    }
+
+    .work-item {
+      padding: 24px 26px;
+
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--sjsu-blue);
+      border-radius: 8px;
+
+      background: var(--white);
+    }
+
+    .work-type {
+      margin: 0 0 5px;
+
+      color: var(--sjsu-blue);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .work-item h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 20px;
+    }
+
+    .work-item p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .teaching-section {
+      background: var(--light-gray);
+    }
+
+    .teaching-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .teaching-card {
+      padding: 28px;
+
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    .teaching-card h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 21px;
+    }
+
+    .teaching-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .news-list {
+      max-width: 900px;
+      margin-top: 40px;
+    }
+
+    .news-item {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 24px;
+
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .news-date {
+      color: var(--sjsu-blue);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .news-text {
+      color: var(--text);
+    }
+
+    .contact-section {
+      color: var(--white);
+      background:
+        linear-gradient(
+          135deg,
+          var(--navy),
+          var(--sjsu-dark-blue)
+        );
+    }
+
+    .contact-section h2 {
+      color: var(--white);
+    }
+
+    .contact-section .section-label {
+      color: var(--sjsu-gold);
+    }
+
+    .contact-section p {
+      max-width: 800px;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 19px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .contact-links a {
+      padding: 11px 18px;
+
+      color: var(--navy);
+      background: var(--sjsu-gold);
+
+      border-radius: 6px;
+
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+
+      padding: 28px 7%;
+
+      color: rgba(255, 255, 255, 0.76);
+      background: #07192d;
+
+      font-size: 14px;
+    }
+
+    .footer-name {
+      color: var(--white);
+      font-weight: 800;
+    }
+
+    @media (max-width: 950px) {
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-photo {
+        margin: 10px 0 0;
+        max-width: 330px;
+      }
+
+      .research-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      header {
+        padding: 16px 6%;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        padding: 75px 6%;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      section {
+        padding: 70px 6%;
+      }
+
+      .research-grid,
+      .teaching-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .news-item {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="site-name">Juha Yoon</div>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#work">Selected Work</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-grid">
+
+        <div>
+          <p class="hero-eyebrow">
+            San José State University
+          </p>
+
+          <h1>Dr. Juha Yoon</h1>
+
+          <p class="hero-title">
+            Assistant Professor of Sport Management<br>
+            Department of Kinesiology
+          </p>
+
+          <p class="hero-bio">
+            I study how artificial intelligence, analytics, and emerging
+            technologies are transforming sport organizations, strategic
+            decision-making, and consumer experiences.
+          </p>
+
+          <div class="hero-links">
+            <a href="files/juha-yoon-cv.pdf" target="_blank">
+              CV
+            </a>
+
+            <a
+              href="YOUR-GOOGLE-SCHOLAR-URL"
+              target="_blank"
+              rel="noopener"
+              class="secondary"
+            >
+              Google Scholar
+            </a>
+
+            <a
+              href="YOUR-ORCID-URL"
+              target="_blank"
+              rel="noopener"
+              class="secondary"
+            >
+              ORCID
+            </a>
+
+            <a
+              href="https://splash-lab.github.io/"
+              target="_blank"
+              rel="noopener"
+              class="secondary"
+            >
+              SPLASH Lab
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <img
+            src="images/juha-yoon.jpg"
+            alt="Portrait of Dr. Juha Yoon"
+            class="profile-photo"
+          >
+        </div>
+
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-inner">
+
+        <div class="section-label">About</div>
+
+        <h2>Sport, data, technology, and people.</h2>
+
+        <div class="about-grid">
+
+          <div class="about-text">
+            <p>
+              I am an Assistant Professor of Sport Management in the
+              Department of Kinesiology at San José State University.
+              My research examines how artificial intelligence, data
+              analytics, and emerging technologies shape sport organizations,
+              leadership, innovation, communication, and consumer behavior.
+            </p>
+
+            <p>
+              My work combines perspectives from sport management,
+              data science, organizational behavior, and human-centered AI.
+              I am particularly interested in how organizations can use
+              technology responsibly while supporting effective
+              decision-making and meaningful human experiences.
+            </p>
+
+            <p>
+              I co-lead the
+              <a
+                href="https://splash-lab.github.io/"
+                target="_blank"
+                rel="noopener"
+              >
+                SPLASH Lab
+              </a>,
+              which conducts interdisciplinary research across sport
+              performance, psychology, learning, analytics, strategy,
+              innovation, and human-centered artificial intelligence.
+            </p>
+          </div>
+
+          <aside class="affiliation-card">
+            <h3>Academic Appointment</h3>
+
+            <p><strong>Assistant Professor</strong></p>
+            <p>Sport Management</p>
+            <p>Department of Kinesiology</p>
+            <p>College of Health and Human Sciences</p>
+            <p>San José State University</p>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="research-section" id="research">
+      <div class="section-inner">
+
+        <div class="section-label">Research</div>
+
+        <h2>Research interests</h2>
+
+        <p class="section-intro">
+          My research focuses on the intersection of sport management,
+          technology, organizational decision-making, and human behavior.
+        </p>
+
+        <div class="research-grid">
+
+          <article class="research-card">
+            <h3>Artificial Intelligence in Sport</h3>
+            <p>
+              Examining how sport organizations adopt, implement, and
+              responsibly use artificial intelligence.
+            </p>
+          </article>
+
+          <article class="research-card">
+            <h3>Sport Analytics</h3>
+            <p>
+              Applying data science and machine learning to organizational,
+              performance, and consumer questions in sport.
+            </p>
+          </article>
+
+          <article class="research-card">
+            <h3>Human-Centered AI</h3>
+            <p>
+              Studying how AI systems can support people, ethical
+              decision-making, and meaningful human experiences.
+            </p>
+          </article>
+
+          <article class="research-card">
+            <h3>Innovation &amp; Entrepreneurship</h3>
+            <p>
+              Investigating innovation adoption, entrepreneurial ecosystems,
+              startups, and emerging technologies in sport.
+            </p>
+          </article>
+
+          <article class="research-card">
+            <h3>Sport Organizations</h3>
+            <p>
+              Exploring leadership, strategy, communication, workforce
+              development, and organizational behavior.
+            </p>
+          </article>
+
+          <article class="research-card">
+            <h3>Fan &amp; Consumer Behavior</h3>
+            <p>
+              Understanding fan engagement, technology use, communication,
+              and consumer experiences.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="section-inner">
+
+        <div class="section-label">Selected Work</div>
+
+        <h2>Current and recent research</h2>
+
+        <p class="section-intro">
+          A selection of publications and active research projects.
+          A complete list is available through my CV and Google Scholar.
+        </p>
+
+        <div class="work-list">
+
+          <article class="work-item">
+            <p class="work-type">Journal Article</p>
+
+            <h3>
+              AI-Enhanced Analytics in Sport Communication
+            </h3>
+
+            <p>
+              Research examining artificial intelligence, analytics,
+              and communication in sport.
+            </p>
+          </article>
+
+          <article class="work-item">
+            <p class="work-type">Research Project</p>
+
+            <h3>
+              Artificial Intelligence Adoption in Sport Organizations
+            </h3>
+
+            <p>
+              A longitudinal examination of AI adoption and diffusion
+              across the sport industry.
+            </p>
+          </article>
+
+          <article class="work-item">
+            <p class="work-type">Research Project</p>
+
+            <h3>
+              Sport Innovation and Startup Ecosystems
+            </h3>
+
+            <p>
+              Research exploring startup networks, accelerators,
+              entrepreneurial ecosystems, and innovation diffusion in sport.
+            </p>
+          </article>
+
+          <article class="work-item">
+            <p class="work-type">Research Project</p>
+
+            <h3>
+              Human-Centered AI and Visual Attention
+            </h3>
+
+            <p>
+              An interdisciplinary project combining eye-tracking,
+              machine learning, and human-centered technology research.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="teaching-section" id="teaching">
+      <div class="section-inner">
+
+        <div class="section-label">Teaching</div>
+
+        <h2>Teaching and mentorship</h2>
+
+        <p class="section-intro">
+          I teach courses connecting sport management, analytics,
+          leadership, innovation, communication, and artificial intelligence.
+        </p>
+
+        <div class="teaching-grid">
+
+          <article class="teaching-card">
+            <h3>Artificial Intelligence in Kinesiology</h3>
+            <p>
+              Undergraduate course examining AI literacy, responsible use,
+              analytics, and applications across kinesiology and sport.
+            </p>
+          </article>
+
+          <article class="teaching-card">
+            <h3>Facility and Event Management</h3>
+            <p>
+              Undergraduate course focused on planning, operations,
+              risk management, and the delivery of sport events and facilities.
+            </p>
+          </article>
+
+          <article class="teaching-card">
+            <h3>Leadership, Management, and Communication</h3>
+            <p>
+              Graduate course exploring leadership, organizational behavior,
+              communication, and professional decision-making.
+            </p>
+          </article>
+
+          <article class="teaching-card">
+            <h3>Research Methods and Analytics</h3>
+            <p>
+              Graduate instruction in quantitative methods, data analysis,
+              research design, and evidence-based decision-making.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="news">
+      <div class="section-inner">
+
+        <div class="section-label">News</div>
+
+        <h2>Recent updates</h2>
+
+        <div class="news-list">
+
+          <div class="news-item">
+            <div class="news-date">July 2026</div>
+            <div class="news-text">
+              Joined San José State University as an Assistant Professor
+              of Sport Management.
+            </div>
+          </div>
+
+          <div class="news-item">
+            <div class="news-date">July 2026</div>
+            <div class="news-text">
+              Co-founded the SPLASH Lab with Dr. Sean Pradhan.
+            </div>
+          </div>
+
+          <div class="news-item">
+            <div class="news-date">2026</div>
+            <div class="news-text">
+              Published research on AI-enhanced analytics in sport
+              communication.
+            </div>
+          </div>
+
+          <div class="news-item">
+            <div class="news-date">2026</div>
+            <div class="news-text">
+              Presented research at national sport management conferences.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="section-inner">
+
+        <div class="section-label">Contact</div>
+
+        <h2>Connect with me</h2>
+
+        <p>
+          I welcome conversations about research collaboration, student
+          mentorship, invited talks, interdisciplinary projects, and
+          responsible applications of artificial intelligence in sport.
+        </p>
+
+        <div class="contact-links">
+          <a href="mailto:juha.yoon@sjsu.edu">
+            Email
+          </a>
+
+          <a
+            href="https://splash-lab.github.io/"
+            target="_blank"
+            rel="noopener"
+          >
+            SPLASH Lab
+          </a>
+
+          <a
+            href="YOUR-LINKEDIN-URL"
+            target="_blank"
+            rel="noopener"
+          >
+            LinkedIn
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div>
+      <span class="footer-name">Dr. Juha Yoon</span><br>
+      Department of Kinesiology · San José State University
+    </div>
+
+    <div>
+      © 2026 Juha Yoon
+    </div>
+  </footer>
+
+</body>
+</html>
